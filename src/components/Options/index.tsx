@@ -32,7 +32,6 @@ const Options = (props: Props) => {
         selectOption(option)
       }
     }
-
     return (
       <CardButton
         key={option}
