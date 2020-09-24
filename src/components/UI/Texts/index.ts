@@ -21,5 +21,5 @@ export const Subtitle = styled.p<SubtitleProps>`
 export const Text = styled.p`
   margin: 0;
   font-size: ${({ theme }) => theme.fontSize.regular};
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme, color }) => (color ? color : theme.colors.text)};
 `

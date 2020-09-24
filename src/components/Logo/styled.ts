@@ -11,6 +11,9 @@ export const GreenText = styled.p`
   color: ${({ theme }) => theme.colors.primary};
   font-size: ${({ theme }) => theme.fontSize.medium};
   font-family: ${({ theme }) => theme.fonts.ribeye};
+  @media screen and (max-width: 600px) {
+    font-size: ${({ theme }) => theme.fontSize.regular};
+  }
 `
 
 export const RedText = styled.p`
@@ -18,4 +21,7 @@ export const RedText = styled.p`
   color: ${({ theme }) => theme.colors.secondary};
   font-size: ${({ theme }) => theme.fontSize.big};
   font-family: ${({ theme }) => theme.fonts.ribeye};
+  @media screen and (max-width: 600px) {
+    font-size: ${({ theme }) => theme.fontSize.medium};
+  }
 `

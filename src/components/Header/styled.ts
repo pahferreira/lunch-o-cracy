@@ -5,5 +5,9 @@ export const Container = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 5px 15px;
+  @media screen and (max-width: 600px) {
+    padding: 15px;
+    margin-bottom: 30px;
+  }
 `

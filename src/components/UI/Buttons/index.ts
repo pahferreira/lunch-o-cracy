@@ -13,23 +13,58 @@ export const TextButton = styled.div<TextButtonProps>`
   align-items: center;
   justify-content: center;
 `
-export const CardButton = styled.div`
+
+type CardButtonProps = {
+  height?: string
+  disabled?: boolean
+}
+
+export const CardButton = styled.div<CardButtonProps>`
   position: relative;
-  cursor: pointer;
+  cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
   width: 100%;
   max-width: 320px;
   min-width: 240px;
-  height: 80px;
+  height: ${({ height }) => (height ? height : '80px')};
   display: flex;
   align-items: center;
   justify-content: center;
   background: ${({ theme }) => theme.colors.white};
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   color: ${({ theme }) => theme.colors.text};
   font-size: ${({ theme }) => theme.fontSize.regular};
   transition: all 300ms;
   &:hover {
-    transform: translateY(-2px);
+    transform: ${({ disabled }) => (disabled ? 'none' : 'translateY(-4px)')};
+  }
+`
+
+type ButtonProps = {
+  bgColor?: string
+  textColor?: string
+  disabled?: boolean
+}
+export const Button = styled.div<ButtonProps>`
+  cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: ${({ theme, bgColor }) =>
+    bgColor ? bgColor : theme.colors.white};
+  -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  color: ${({ theme, textColor }) =>
+    textColor ? textColor : theme.colors.text};
+  font-size: ${({ theme }) => theme.fontSize.regular};
+  transition: all 300ms;
+  min-width: 160px;
+  height: 48px;
+  &:hover {
+    transform: ${({ disabled }) => (disabled ? 'none' : 'translateY(-4px)')};
   }
 `

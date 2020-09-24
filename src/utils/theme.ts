@@ -6,6 +6,7 @@ const theme = {
     primary: '#3E80A6',
     secondary: '#A04646',
     success: '#60C299',
+    disabled: '#E5E5E5',
   },
   fonts: {
     ribeye: 'Ribeye, cursive',
